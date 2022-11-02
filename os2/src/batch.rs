@@ -95,6 +95,7 @@ lazy_static! {
             extern "C" {
                 fn _num_app();
             }
+            // 获取app
             let num_app_ptr = _num_app as usize as *const usize;
             let num_app = num_app_ptr.read_volatile();
             let mut app_start: [usize; MAX_APP_NUM + 1] = [0; MAX_APP_NUM + 1];
